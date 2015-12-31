@@ -30,13 +30,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/oBFUCSE' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Creating the app went fairly smoothly, but I initially had issues with updating the NSUserDefaults. It took me some time to figure out how to get it to save the selected segment across both screens, but I was eventually able to see that I needed to setDouble() method on defaults in order set the tip percentage.
 
 ## License
 
