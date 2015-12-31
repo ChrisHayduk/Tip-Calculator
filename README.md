@@ -40,6 +40,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Creating the app went fairly smoothly, but I initially had issues with updating the NSUserDefaults. It took me some time to figure out how to get it to save the selected segment across both screens, but I was eventually able to see that I needed to setDouble() method on defaults in order set the tip percentage.
 
+I later went back and added the optional features of having the keyboard appear automatically and saving the bill amount across restarts for 10 minutes. Both of these features were fairly easy to implement after having gone through the main parts of the apps.
+
 ## License
 
     Copyright [2015] [Christopher Hayduk]
