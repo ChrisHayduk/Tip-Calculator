@@ -16,8 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var numOfPeopleField: UITextField!
  
+    let defaults = NSUserDefaults.standardUserDefaults()
     
    override func viewDidLoad() {
+        let timeNow = NSDate()
+        let timeLast = defaults.objectForKey("lastUsed") as? NSDate
+    
+        if ( timeLast != nil && timeNow.timeIntervalSinceDate(timeLast!) < 600)
+        {
+            billField.text = defaults.stringForKey("lastBillAmount")
+        }
+    
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
    }
@@ -32,8 +41,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let tipPercentage = defaults.doubleForKey("default_tip_percentage")
+        var tipPercentage = defaults.doubleForKey("default_tip_percentage")
         
         if (tipPercentage == 0.1) {
             tipControl.selectedSegmentIndex = 0
@@ -46,6 +54,7 @@ class ViewController: UIViewController {
         }
         else {
             tipControl.selectedSegmentIndex = 1
+            tipPercentage = 0.15
         }
         
         let numPeople = NSString(string: numOfPeopleField.text!).doubleValue
@@ -58,6 +67,10 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+    }
+    
+    override func viewDidAppear(animated: Bool){
+        billField.becomeFirstResponder()
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
@@ -79,5 +92,12 @@ class ViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        defaults.setObject(NSDate(), forKey: "lastUsed")
+        defaults.setObject(billField.text, forKey: "lastBillAmount")
+        defaults.synchronize()
+    }
+
 }
 

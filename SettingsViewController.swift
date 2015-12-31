@@ -41,8 +41,8 @@ class SettingsViewController: UIViewController {
             defaultTip.selectedSegmentIndex = 1
         }
     }
-
-    @IBAction func valueChanged(sender: AnyObject) {
+    
+        @IBAction func valueChanged(sender: AnyObject) {
         let percentages = [0.1, 0.15, 0.2]
         let index = defaultTip.selectedSegmentIndex
         let percentageSelected = percentages[index]
