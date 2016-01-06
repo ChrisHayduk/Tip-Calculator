@@ -18,25 +18,29 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [ ] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
+* [X] Remembering the bill amount across app restarts (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [X] Allow user to enter number of people splitting the bill
+* [X] Allow user to enter number of people splitting the bill
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/oBFUCSE.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+UPDATED:
+
+<img src='http://imgur.com/C0Q8ppu.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Creating the app went fairly smoothly, but I initially had issues with updating the NSUserDefaults. It took me some time to figure out how to get it to save the selected segment across both screens, but I was eventually able to see that I needed to setDouble() method on defaults in order set the tip percentage.
+
+I later went back and added the optional features of having the keyboard appear automatically and saving the bill amount across restarts for 10 minutes. Both of these features were fairly easy to implement after having gone through the main parts of the apps.
 
 ## License
 
