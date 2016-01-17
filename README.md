@@ -1,4 +1,4 @@
-# tip_calculator
+# Tip-Calculator
 Tip calculator for Codepath University
 
 # Pre-work - Tips
